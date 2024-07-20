@@ -1,22 +1,17 @@
-N = int(input())
+# 이건 못 풀어서 코드봤는데, 천재다. 이건.
+# 입력값
+buildings = []
+for i in range(int(input())): buildings.append(int(input()))
 
-num_list = []
-
-for _ in range(N):
-    M = int(input())
-    num_list.append(M)
-
+# 스택, 결과변수
+stack = []
 result = 0
-count = 0
-height = 0
 
-for _ in range(len(num_list)-1, -1, -1):
-    if num_list[_] > height:
-        height = num_list[_]
-        result += count
-        count = 1
-    else:
-        height = num_list[_]
-        count += 1
+for b in buildings:
+  while stack and stack[-1]<=b:
+    stack.pop()
+  stack.append(b)
+
+  result += len(stack)-1
 
 print(result)
