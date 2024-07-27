@@ -10,7 +10,7 @@ int main(){
     cin >> n;
 
     stack<int> buildings;
-    long long answer = 0;
+    unsigned int answer = 0;
 
     for (int i = 0; i < n; i++){
         int height;
